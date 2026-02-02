@@ -6,10 +6,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Rigidbody rb;
     Vector3 movement;
-    void Update()
+
+    void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxisRaw("Horizontal");
-        float moveVertical = Input.GetAxisRaw("Vertical");
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
 
         movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
