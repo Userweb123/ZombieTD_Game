@@ -1,19 +1,24 @@
 using UnityEngine;
 
-public class PlayerHP : HPSystem
+public class EnemyHP : HPSystem
 {
     protected override void OnDeath()
     {
-        Debug.Log("Player Died");
-        GetComponentInChildren<Rigidbody>().gameObject.transform.Rotate(90f, 0f, 0f);
+        Destroy(gameObject);
     }
 
     void Update()
     {
         //видалити пізніше!
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.J))
         {
             ModifyHP(Random.Range(-5, 5));
         }
+    }
+
+    //видалити пізніше!
+    void OnMouseDown()
+    {
+        ModifyHP(-1);
     }
 }
